@@ -337,12 +337,15 @@ things
             coderCantRegister
             alert. Please fullfill the blank
         else registerSuccess
-        github.sendEmailToCoder -> PlatformEmail
-        authorize = PlatformEmail
-        coders.confirmAccount
-        coders.useGithub
-    
+        Plantform.authorizeRegisterInformation
+        if Information is correct
+            github.sendEmailToCoder -> PlatformEmail
+            authorize = PlatformEmail
+            coders.confirmAccount
+            coders.useGithub
+        else coder.Register = Register + 1 
     else keepCoding
+
 
 5. Design a soft-drink/snacks vending machine.
 
@@ -360,7 +363,7 @@ Things
     vendingMachine
  
         Data: Name, size, quality, price, structure
-        Behaviors: getMoney, giveoutProducts, Savemoney, count, display, 
+        Behaviors: getMoney, giveoutProducts, Savemoney, count, display, Autorize
 
     Customers
 
@@ -372,6 +375,9 @@ Things
     Snacks chips
     VendingMachine auto
     Customers customers
+    Money coins
+    MachineCheckMoney authorize
+
 
     if materialIsEnough
         nick.DesignAMachineChart -> designChart 
@@ -395,9 +401,20 @@ Things
         end
 
         if snacks is available 
-            chips = snacks
             customers.buysnacks -> customersBuyChips
-            customers.eat
+            customers.useCoins
+            if Machine canAuthorize
+                Loop
+                    if coinsIsAvaialble 
+                        break
+                    end 
+                    Machine giveCustomersFood
+                    chips = Snacks
+                    coustomers.getChips
+                    else Machine return Coins , alert -> Coins are not available
+                end
+            else Machine is not working
+
         
         else customersCantBuySnacks alert: Come Back later
 
@@ -405,15 +422,6 @@ Things
 
     
             
-
-
-
-
-
-
-
-
-
 
 
 
