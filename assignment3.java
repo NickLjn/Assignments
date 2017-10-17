@@ -150,9 +150,11 @@ public class assignment3 {
 			return Math.sqrt(a);
 		}
 		protected double square(double a){
+			// Just return a * a;
 			return a *= a;
 		}
 		protected double cube(double a){
+			// Same here, return a * a * a;
 			return a *= a*= a;
 		}
 		
