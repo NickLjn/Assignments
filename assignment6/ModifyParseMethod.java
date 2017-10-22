@@ -19,9 +19,13 @@ public class ModifyParseMethod {
 	          }
 	          finally {
 	            if (input != null) {
-	              input.close();
-	            }
-	          
-	       }
+	            	try{
+	                    input.close();
+	                   }
+	        	    catch(IOException e){
+	        		    e.printStackTrace();
+	        	    }
+	              }
+	         }
 	 }
 }
