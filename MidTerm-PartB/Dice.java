@@ -9,6 +9,7 @@ public class Dice {
 				}
 			else return 0;
 		}
+		// i <= m
 		for(int i = 1; i < m; i++){
 			ways += countNumberOfPossibleWays(m, n-1, x-i);
 		}
