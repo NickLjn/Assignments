@@ -27,5 +27,4 @@ public class Extra {
 		int[] arr = {1,5,5,11};
 		System.out.println(findPartition(arr));
 	}
-
 }
